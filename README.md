@@ -13,7 +13,7 @@
 
 - 📫 How to reach me **vishalkhan251@gmail.com**
 
-- 📄 Know about my experiences [https://shorturl.at/aboCS](https://shorturl.at/aboCS)
+- 📄 Know about my experiences [Resume](https://drive.google.com/file/d/10MnohApp8nMlkn7qIfDXxqtac93QAc-P/view?usp=drive_link)
 
 - ⚡ Fun fact **A bug in the code? Just blame it on the keyboard.**
 
