@@ -1,0 +1,35 @@
+name: ci
+
+# Tests only. The staleness check (scripts/update.py --check) is deliberately
+# not run here: the activity table goes stale whenever a push lands in any
+# other repository, which would turn this red for reasons unrelated to the
+# change under review. Freshness is the refresh workflow's job.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pytest
+
+      - name: Tests
+        run: python -m pytest scripts/tests -q
+
+      # Renders every card from a fixture and parses the result, so a malformed
+      # SVG cannot reach the profile.
+      - name: Cards parse as XML
+        run: python -m pytest scripts/tests/test_cards.py -q
