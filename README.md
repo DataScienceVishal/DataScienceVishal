@@ -171,11 +171,11 @@ three modes rather than checked once by hand.
 <!-- profile:activity -->
 | repository | what it is | last push |
 | --- | --- | --- |
-| [twicerun](https://github.com/DataScienceVishal/twicerun) | An audit of the TRAIL benchmark's scorer. Both headline metrics divide by the gold count, so a… | 8 Sep 2026 |
-| [trail-scorer-audit](https://github.com/DataScienceVishal/trail-scorer-audit) | Runs a batch pipeline several times and reports, per step, how often it failed to give the… | 7 Sep 2026 |
+| [twicerun](https://github.com/DataScienceVishal/twicerun) | Runs a batch pipeline several times and reports, per step, how often it failed to give the… | 8 Sep 2026 |
+| [trail-scorer-audit](https://github.com/DataScienceVishal/trail-scorer-audit) | An audit of the TRAIL benchmark's scorer. Both headline metrics divide by the gold count, so a… | 7 Sep 2026 |
 | [lesion-split](https://github.com/DataScienceVishal/lesion-split) | A skin lesion classifier scored two ways. Splitting HAM10000 by image leaks 38% of the test… | 3 Sep 2026 |
 | [DataScienceVishal.github.io](https://github.com/DataScienceVishal/DataScienceVishal.github.io) | Personal portfolio. React 19, Vite, Tailwind v4, Motion. Every claim on the page carries a… | 2 Sep 2026 |
-| [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) | _no description_ | 29 Aug 2026 |
+| [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) | A live RAG assistant answering questions about my work from cited sources. FastAPI, ChromaDB… | 29 Aug 2026 |
 <!-- /profile:activity -->
 
 <!-- profile:stamp -->
