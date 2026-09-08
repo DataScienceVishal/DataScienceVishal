@@ -1,0 +1,54 @@
+name: refresh profile
+
+# Regenerates the marked blocks in README.md and the SVG cards, then commits
+# only if something actually changed.
+#
+# Dates in the activity table are absolute, so a scheduled run on a quiet day
+# produces no diff and no commit. The log line below is how you tell "nothing
+# changed" from "the job is broken".
+
+on:
+  schedule:
+    - cron: "17 6 * * *"   # 06:17 UTC daily, off the hour to dodge the rush
+  workflow_dispatch:        # manual run from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-profile
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No third-party packages. The generator uses only the standard library,
+      # so there is no lockfile to drift and nothing to install.
+      - name: Regenerate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/update.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- README.md assets; then
+            echo "No change. Nothing pushed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets
+          git commit -m "chore: refresh profile activity and cards"
+          git push
