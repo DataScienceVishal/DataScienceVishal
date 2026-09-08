@@ -23,10 +23,13 @@ source chunk each claim came from, so you can check it.
 
 It will tell you when it does not know. That was the harder half to build.
 
-> "Explain the RAG architecture in this project"
-> "What chunking strategy did you use and why?"
-> "How do you handle prompt injection?"
-> "Will he require visa sponsorship?"
+Three modes, three citation policies. Things worth asking it:
+
+| General | Recruiter | Interview |
+| --- | --- | --- |
+| What projects has he built? | Summarise him as a candidate in 60 seconds | Explain the RAG architecture in this project |
+| What is his MSc thesis about? | Will he require visa sponsorship? | What chunking strategy did you use, and why? |
+| What databases has he worked with? | When is he available to start? | How do you handle prompt injection? |
 
 ## Selected work
 
