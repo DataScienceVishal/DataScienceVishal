@@ -266,13 +266,16 @@ e-commerce. Built a Gym-style environment on real e-commerce data, then trained
 and compared DQN, A2C and PPO across multi-episode simulations. DQN produced
 the most stable profit curve.
 
-**Multi-agent pricing system.** An ensemble of specialist agents with a
-coordinator reconciling their outputs, over SentenceTransformer embeddings in
-Chroma. Benchmarked 16 models on one harness, from XGBoost through five
-frontier LLMs to fine-tuned open models. A fine-tuned 4-bit Llama 3.2 cut error
-62 percent below the constant baseline and beat every frontier model tested,
-including GPT-5.1 by 11 percent, moving the same base model from
-worse-than-baseline to best-in-class through fine-tuning alone.
+**Multi-agent pricing system.** Coursework, built on the capstone of
+[Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering).
+The agent ensemble, the benchmark harness and the human baseline are his; I
+worked through them and ran the experiments. An ensemble of specialist agents
+with a coordinator reconciling their outputs, over SentenceTransformer
+embeddings in Chroma, benchmarked across 16 models from XGBoost through five
+frontier LLMs to fine-tuned open models. The best result was a fine-tuned 4-bit
+Llama 3.2, which cut error 62 percent below the constant baseline and beat every
+frontier model tested. Worth being precise about what is mine here: the
+engineering is the course author's, the practice is mine.
 
 ### Availability
 
