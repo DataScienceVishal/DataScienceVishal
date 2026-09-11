@@ -27,6 +27,7 @@ FACTS = {
     "languages": [("Python", 5), ("TypeScript", 1)],
     "language_repos": 6,
     "language_since": "Jan 2026",
+    "twin_documents": 88,
     "activity": [
         {
             "name": "twicerun",
@@ -148,7 +149,49 @@ def test_render_fills_every_block():
     text = (
         "<!-- profile:activity -->\n\n<!-- /profile:activity -->\n"
         "<!-- profile:stamp -->\n\n<!-- /profile:stamp -->\n"
+        "indexed <!-- profile:twindocs -->0<!-- /profile:twindocs --> documents\n"
     )
     out = rb.render(text, FACTS)
     assert "twicerun" in out
     assert "8 Sep 2026" in out
+    assert ">88<" in out
+
+
+def test_render_fails_loudly_if_a_marker_was_deleted():
+    """Silently updating nothing is the failure mode this guards against."""
+    text = (
+        "<!-- profile:activity -->\n\n<!-- /profile:activity -->\n"
+        "<!-- profile:stamp -->\n\n<!-- /profile:stamp -->\n"
+    )
+    with pytest.raises(rb.MarkerError, match="twindocs"):
+        rb.render(text, FACTS)
+
+
+def test_inline_block_does_not_add_newlines():
+    """twindocs sits mid-sentence, so newlines would break the paragraph."""
+    text = "indexed <!-- profile:twindocs -->87<!-- /profile:twindocs --> documents"
+    out = rb.replace_block(text, "twindocs", "88", inline=True)
+    assert out == "indexed <!-- profile:twindocs -->88<!-- /profile:twindocs --> documents"
+    assert "\n" not in out
+
+
+def test_unreachable_endpoint_leaves_the_last_good_figure():
+    """A dead endpoint must not overwrite a real number with a guess."""
+    text = (
+        "<!-- profile:activity -->\n\n<!-- /profile:activity -->\n"
+        "<!-- profile:stamp -->\n\n<!-- /profile:stamp -->\n"
+        "indexed <!-- profile:twindocs -->88<!-- /profile:twindocs --> documents"
+    )
+    out = rb.render(text, {**FACTS, "twin_documents": None})
+    assert ">88<" in out
+    assert "None" not in out
+
+
+def test_reachable_endpoint_updates_the_figure():
+    text = (
+        "<!-- profile:activity -->\n\n<!-- /profile:activity -->\n"
+        "<!-- profile:stamp -->\n\n<!-- /profile:stamp -->\n"
+        "indexed <!-- profile:twindocs -->87<!-- /profile:twindocs --> documents"
+    )
+    out = rb.render(text, {**FACTS, "twin_documents": 91})
+    assert ">91<" in out

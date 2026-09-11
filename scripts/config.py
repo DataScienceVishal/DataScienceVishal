@@ -58,3 +58,9 @@ LANGUAGE_BY = "repositories"
 # as an all-time one is a misrepresentation regardless of how flattering it is.
 LANGUAGE_SINCE = "2026-01-01T00:00:00Z"
 LANGUAGE_SINCE_LABEL = "Jan 2026"
+
+# The AI twin's readiness endpoint reports how many documents its vector store
+# currently holds. The README used to state that count by hand and it drifted:
+# the page said 87 while the deployment served 88. A number a reader can refute
+# with one HTTP request should not be typed.
+TWIN_READY_URL = "https://ai-professional-twin.vercel.app/api/ready"

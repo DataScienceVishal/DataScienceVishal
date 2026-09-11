@@ -16,6 +16,7 @@ from typing import Any
 
 from config import (
     ACTIVITY_EXCLUDE,
+    TWIN_READY_URL,
     LANGUAGE_EXCLUDE,
     LANGUAGE_SINCE,
     LANGUAGE_SINCE_LABEL,
@@ -158,6 +159,25 @@ def _activity(repos: list[dict]) -> list[dict]:
     ]
 
 
+def _twin_documents() -> int | None:
+    """How many documents the live twin has indexed, or None if unreachable.
+
+    Returns None rather than raising or guessing. A profile refresh must not
+    fail because someone else's deployment is down, and writing a placeholder
+    would be worse than leaving the last known-good figure in place.
+    """
+    request = urllib.request.Request(
+        TWIN_READY_URL, headers={"User-Agent": "profile-generator"}
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=15) as response:
+            payload = json.loads(response.read())
+    except (urllib.error.URLError, ValueError, TimeoutError, OSError):
+        return None
+    count = payload.get("document_count")
+    return int(count) if isinstance(count, int) and count > 0 else None
+
+
 def collect() -> dict:
     """Every fact the generator needs, in one plain dict."""
     user = _request(f"{API}/users/{USER}")
@@ -174,6 +194,7 @@ def collect() -> dict:
         "languages": languages,
         "language_repos": language_repos,
         "language_since": LANGUAGE_SINCE_LABEL,
+        "twin_documents": _twin_documents(),
         "activity": _activity(repos),
         "repo_count_mine": len(
             [r for r in repos if r["name"] not in LANGUAGE_EXCLUDE]

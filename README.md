@@ -23,7 +23,7 @@ source chunk each claim came from, so you can check it.
 
 It will tell you when it does not know. That was the harder half to build.
 
-Three modes, three citation policies. Things worth asking it:
+Three modes. Things worth asking it:
 
 | General | Recruiter | Interview |
 | --- | --- | --- |
@@ -138,14 +138,15 @@ is the whole point of running the experiment.
 
 </details>
 
-### [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) · production RAG, 390 tests in CI
+### [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) · production RAG, 386 tests in CI
 
 FastAPI, ChromaDB and Azure OpenAI behind a React 19 front end streaming over
-SSE. Eight LLM-callable tools, three answer modes with separate citation
-policies, and 87 documents indexed in the running deployment.
+SSE. Eight LLM-callable tools, three answer modes (inline citations in
+interview mode), and <!-- profile:twindocs -->88<!-- /profile:twindocs --> documents
+indexed in the running deployment.
 
 Live on Azure Container Apps at about **$4.70/month**, with a GitHub Actions to
-GHCR image pipeline. **390 tests** (276 backend, 114 frontend) under mypy
+GHCR image pipeline. **386 tests** (272 backend, 114 frontend) under mypy
 strict, ruff and oxlint.
 
 <details>
@@ -161,8 +162,9 @@ holds the subject across "and what about that one?" without a second LLM call.
 
 Auto-ingested GitHub READMEs are delimited as untrusted data, because a
 knowledge base that pulls from public repositories is a knowledge base a
-stranger can write to. Injection defences are regression-tested across all
-three modes rather than checked once by hand.
+stranger can write to. The system prompt labels that block as data and forbids
+following instructions inside it, which is a mitigation rather than a guarantee,
+and the repository says so.
 
 </details>
 
@@ -171,11 +173,11 @@ three modes rather than checked once by hand.
 <!-- profile:activity -->
 | repository | what it is | last push |
 | --- | --- | --- |
-| [twicerun](https://github.com/DataScienceVishal/twicerun) | Runs a batch pipeline several times and reports, per step, how often it failed to give the… | 10 Sep 2026 |
+| [Bike_Rental_using_Linear_Regression](https://github.com/DataScienceVishal/Bike_Rental_using_Linear_Regression) | Bike_Rental_using_Linear_Regression | 11 Sep 2026 |
+| [House-Price-Prediction](https://github.com/DataScienceVishal/House-Price-Prediction) | Linear Regression+Decision Tree+Random Forest | 11 Sep 2026 |
+| [twicerun](https://github.com/DataScienceVishal/twicerun) | Runs a batch pipeline several times and reports, per step, how often it failed to give the… | 11 Sep 2026 |
 | [trail-scorer-audit](https://github.com/DataScienceVishal/trail-scorer-audit) | An audit of the TRAIL benchmark's scorer. Both headline metrics divide by the gold count, so a… | 7 Sep 2026 |
 | [lesion-split](https://github.com/DataScienceVishal/lesion-split) | A skin lesion classifier scored two ways. Splitting HAM10000 by image leaks 38% of the test… | 3 Sep 2026 |
-| [DataScienceVishal.github.io](https://github.com/DataScienceVishal/DataScienceVishal.github.io) | Personal portfolio. React 19, Vite, Tailwind v4, Motion. Every claim on the page carries a… | 2 Sep 2026 |
-| [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) | A live RAG assistant answering questions about my work from cited sources. FastAPI, ChromaDB… | 29 Aug 2026 |
 <!-- /profile:activity -->
 
 <!-- profile:stamp -->
@@ -246,7 +248,7 @@ sales forecasting at 10 to 20 percent MAPE, used daily for commercial
 planning. Rebuilt revenue and collections reporting, cutting the monthly cycle
 from about 2 hours to about 30 minutes.
 
-Four years in finance, accounts and taxation before any of this.
+Close to three years in finance, accounts and taxation before any of this.
 
 ### Education
 
@@ -264,13 +266,16 @@ e-commerce. Built a Gym-style environment on real e-commerce data, then trained
 and compared DQN, A2C and PPO across multi-episode simulations. DQN produced
 the most stable profit curve.
 
-**Multi-agent pricing system.** An ensemble of specialist agents with a
-coordinator reconciling their outputs, over SentenceTransformer embeddings in
-Chroma. Benchmarked 16 models on one harness, from XGBoost through five
-frontier LLMs to fine-tuned open models. A fine-tuned 4-bit Llama 3.2 cut error
-62 percent below the constant baseline and beat every frontier model tested,
-including GPT-5.1 by 11 percent, moving the same base model from
-worse-than-baseline to best-in-class through fine-tuning alone.
+**Multi-agent pricing system.** Coursework, built on the capstone of
+[Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering).
+The agent ensemble, the benchmark harness and the human baseline are his; I
+worked through them and ran the experiments. An ensemble of specialist agents
+with a coordinator reconciling their outputs, over SentenceTransformer
+embeddings in Chroma, benchmarked across 16 models from XGBoost through five
+frontier LLMs to fine-tuned open models. The best result was a fine-tuned 4-bit
+Llama 3.2, which cut error 62 percent below the constant baseline and beat every
+frontier model tested. Worth being precise about what is mine here: the
+engineering is the course author's, the practice is mine.
 
 ### Availability
 
