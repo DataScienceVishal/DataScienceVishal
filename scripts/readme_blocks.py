@@ -38,8 +38,14 @@ def _pattern(name: str) -> re.Pattern[str]:
     )
 
 
-def replace_block(text: str, name: str, content: str) -> str:
-    """Swap the body of one marker pair. Raises if the pair is not unique."""
+def replace_block(
+    text: str, name: str, content: str, *, inline: bool = False
+) -> str:
+    """Swap the body of one marker pair. Raises if the pair is not unique.
+
+    inline=True omits the surrounding newlines, for a marker that sits inside
+    a sentence rather than standing alone as a block.
+    """
     pattern = _pattern(name)
     matches = pattern.findall(text)
     if not matches:
@@ -50,6 +56,8 @@ def replace_block(text: str, name: str, content: str) -> str:
         raise MarkerError(f"profile:{name} appears {len(matches)} times, expected once")
 
     def substitute(match: re.Match[str]) -> str:
+        if inline:
+            return f"{match.group(1)}{content.strip()}{match.group(3)}"
         return f"{match.group(1)}\n{content.strip()}\n{match.group(3)}"
 
     return pattern.sub(substitute, text, count=1)
@@ -106,7 +114,14 @@ def stamp(facts: dict) -> str:
 
 
 def render(text: str, facts: dict) -> str:
-    """Apply every generated block to the README text."""
+    """Apply every generated block to the README text.
+
+    twindocs is conditional: when the live endpoint is unreachable we leave the
+    last known-good figure in the README rather than overwrite it with a guess.
+    """
     text = replace_block(text, "activity", activity_table(facts))
     text = replace_block(text, "stamp", stamp(facts))
+    documents = facts.get("twin_documents")
+    if documents is not None:
+        text = replace_block(text, "twindocs", str(documents), inline=True)
     return text
