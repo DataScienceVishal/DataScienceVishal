@@ -16,6 +16,7 @@ from typing import Any
 
 from config import (
     ACTIVITY_EXCLUDE,
+    ACTIVITY_MIN_CREATED,
     LANGUAGE_EXCLUDE,
     LANGUAGE_SINCE,
     LANGUAGE_SINCE_LABEL,
@@ -143,7 +144,9 @@ def _activity(repos: list[dict]) -> list[dict]:
     candidates = [
         repo
         for repo in repos
-        if repo["name"] not in ACTIVITY_EXCLUDE and repo.get("pushed_at")
+        if repo["name"] not in ACTIVITY_EXCLUDE
+        and repo.get("pushed_at")
+        and (repo.get("created_at") or "") >= ACTIVITY_MIN_CREATED
     ]
     candidates.sort(key=lambda repo: repo["pushed_at"], reverse=True)
     return [

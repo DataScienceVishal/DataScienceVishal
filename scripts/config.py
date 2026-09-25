@@ -31,6 +31,13 @@ SUPERSEDED = {
     "my-ai-resume",
 }
 
+# Repositories created before this date never appear in the activity table.
+# A bulk metadata pass on 2026-09-11 touched every 2024 notebook repository and
+# reset pushed_at on all of them, so "most recently pushed" started returning
+# sklearn coursework from 2024. The table is meant to say what is being worked
+# on now, and pushed_at alone stopped carrying that.
+ACTIVITY_MIN_CREATED = "2025-01-01T00:00:00Z"
+
 ACTIVITY_EXCLUDE = NOT_MY_WORK | SUPERSEDED | {PROFILE_REPO}
 LANGUAGE_EXCLUDE = NOT_MY_WORK | {PROFILE_REPO}
 
