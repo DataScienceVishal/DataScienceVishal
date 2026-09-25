@@ -171,11 +171,11 @@ three modes rather than checked once by hand.
 <!-- profile:activity -->
 | repository | what it is | last push |
 | --- | --- | --- |
-| [twicerun](https://github.com/DataScienceVishal/twicerun) | Runs a batch pipeline several times and reports, per step, how often it failed to give the… | 19 Sep 2026 |
-| [trail-scorer-audit](https://github.com/DataScienceVishal/trail-scorer-audit) | An audit of the TRAIL benchmark's scorer. Both headline metrics divide by the gold count, so a… | 19 Sep 2026 |
-| [lesion-split](https://github.com/DataScienceVishal/lesion-split) | A skin lesion classifier scored two ways. Splitting HAM10000 by image leaks 38% of the test… | 11 Sep 2026 |
-| [Heart_Disease_Prediction](https://github.com/DataScienceVishal/Heart_Disease_Prediction) | Used the Decision Tree and Random Forest algorithms to ace this project | 11 Sep 2026 |
-| [Breast_Cancer_Prediction](https://github.com/DataScienceVishal/Breast_Cancer_Prediction) | Breast_Cancer_Prediction using XGBoostClassifier & AdaboostClassifier | 11 Sep 2026 |
+| [lesion-split](https://github.com/DataScienceVishal/lesion-split) | A skin lesion classifier scored two ways. Splitting HAM10000 by image leaks 38% of the test… | 25 Sep 2026 |
+| [twicerun](https://github.com/DataScienceVishal/twicerun) | Runs a batch pipeline several times and reports, per step, how often it failed to give the… | 25 Sep 2026 |
+| [trail-scorer-audit](https://github.com/DataScienceVishal/trail-scorer-audit) | An audit of the TRAIL benchmark's scorer. Both headline metrics divide by the gold count, so a… | 25 Sep 2026 |
+| [DataScienceVishal.github.io](https://github.com/DataScienceVishal/DataScienceVishal.github.io) | Personal portfolio. React 19, Vite, Tailwind v4, Motion. Every claim on the page carries a… | 25 Sep 2026 |
+| [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) | A live RAG assistant answering questions about my work from cited sources. FastAPI, ChromaDB… | 25 Sep 2026 |
 <!-- /profile:activity -->
 
 <!-- profile:stamp -->
