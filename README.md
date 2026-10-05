@@ -171,7 +171,7 @@ three modes rather than checked once by hand.
 <!-- profile:activity -->
 | repository | what it is | last push |
 | --- | --- | --- |
-| [cannot-read](https://github.com/DataScienceVishal/cannot-read) | _no description_ | 2 Oct 2026 |
+| [cannot-read](https://github.com/DataScienceVishal/cannot-read) | _no description_ | 5 Oct 2026 |
 | [twicerun](https://github.com/DataScienceVishal/twicerun) | Runs a batch pipeline several times and reports, per step, how often it failed to give the… | 2 Oct 2026 |
 | [lesion-split](https://github.com/DataScienceVishal/lesion-split) | A skin lesion classifier scored two ways. Splitting HAM10000 by image leaks 38% of the test… | 2 Oct 2026 |
 | [untrusted-rows](https://github.com/DataScienceVishal/untrusted-rows) | A DuckDB MCP server that treats the rows it returns as untrusted input, and the measurement of… | 1 Oct 2026 |
@@ -179,7 +179,7 @@ three modes rather than checked once by hand.
 <!-- /profile:activity -->
 
 <!-- profile:stamp -->
-<sub>Generated from the GitHub API on 4 Oct 2026. See <a href="scripts/">scripts/</a>.</sub>
+<sub>Generated from the GitHub API on 5 Oct 2026. See <a href="scripts/">scripts/</a>.</sub>
 <!-- /profile:stamp -->
 
 ## Cards
