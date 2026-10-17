@@ -171,15 +171,15 @@ three modes rather than checked once by hand.
 <!-- profile:activity -->
 | repository | what it is | last push |
 | --- | --- | --- |
+| [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) | A live RAG assistant answering questions about my work from cited sources. FastAPI, ChromaDB… | 16 Oct 2026 |
 | [cannot-read](https://github.com/DataScienceVishal/cannot-read) | _no description_ | 16 Oct 2026 |
-| [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) | A live RAG assistant answering questions about my work from cited sources. FastAPI, ChromaDB… | 15 Oct 2026 |
 | [University-Assignment-Community-Vaccination-Tracker](https://github.com/DataScienceVishal/University-Assignment-Community-Vaccination-Tracker) | Community vaccination tracker over a normalised relational schema, on deterministic synthetic… | 15 Oct 2026 |
 | [DataScienceVishal.github.io](https://github.com/DataScienceVishal/DataScienceVishal.github.io) | Personal portfolio. React 19, Vite, Tailwind v4, Motion. Every claim on the page carries a… | 13 Oct 2026 |
 | [twicerun](https://github.com/DataScienceVishal/twicerun) | Runs a batch pipeline several times and reports, per step, how often it failed to give the… | 2 Oct 2026 |
 <!-- /profile:activity -->
 
 <!-- profile:stamp -->
-<sub>Generated from the GitHub API on 16 Oct 2026. See <a href="scripts/">scripts/</a>.</sub>
+<sub>Generated from the GitHub API on 17 Oct 2026. See <a href="scripts/">scripts/</a>.</sub>
 <!-- /profile:stamp -->
 
 ## Cards
