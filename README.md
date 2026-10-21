@@ -18,12 +18,12 @@ formal version of what the repositories below already do.
 
 [**ai-professional-twin.vercel.app**](https://ai-professional-twin.vercel.app)
 is a live RAG assistant that answers questions about my work from a cited
-knowledge base. No signup. It streams the answer and then shows you which
-source chunk each claim came from, so you can check it.
+knowledge base. No signup. It streams the answer and then lists the
+sources it used underneath, so you can check it.
 
 It will tell you when it does not know. That was the harder half to build.
 
-Three modes, three citation policies. Things worth asking it:
+Three modes, and interview mode also cites each claim inline. Things worth asking it:
 
 | General | Recruiter | Interview |
 | --- | --- | --- |
@@ -138,15 +138,15 @@ is the whole point of running the experiment.
 
 </details>
 
-### [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) · production RAG, 390 tests in CI
+### [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) · production RAG, about 390 tests in CI
 
 FastAPI, ChromaDB and Azure OpenAI behind a React 19 front end streaming over
-SSE. Eight LLM-callable tools, three answer modes with separate citation
-policies, and 87 documents indexed in the running deployment.
+SSE. Eight LLM-callable tools, three answer modes, and 89 documents in the running
+deployment's index on 21 Oct.
 
 Live on Azure Container Apps at about **$4.70/month**, with a GitHub Actions to
-GHCR image pipeline. **390 tests** (276 backend, 114 frontend) under mypy
-strict, ruff and oxlint.
+GHCR image pipeline. **About 390 tests** across backend and frontend,
+under mypy strict, ruff and oxlint.
 
 <details>
 <summary>The retrieval and injection details that took the time</summary>
@@ -161,8 +161,8 @@ holds the subject across "and what about that one?" without a second LLM call.
 
 Auto-ingested GitHub READMEs are delimited as untrusted data, because a
 knowledge base that pulls from public repositories is a knowledge base a
-stranger can write to. Injection defences are regression-tested across all
-three modes rather than checked once by hand.
+stranger can write to. A test checks that every mode's prompt still
+carries the instruction to treat retrieved text as data.
 
 </details>
 
@@ -246,7 +246,7 @@ sales forecasting at 10 to 20 percent MAPE, used daily for commercial
 planning. Rebuilt revenue and collections reporting, cutting the monthly cycle
 from about 2 hours to about 30 minutes.
 
-Four years in finance, accounts and taxation before any of this.
+Nearly three years in finance, accounts and taxation before any of this.
 
 ### Education
 
@@ -266,17 +266,17 @@ the most stable profit curve.
 
 **Multi-agent pricing system.** An ensemble of specialist agents with a
 coordinator reconciling their outputs, over SentenceTransformer embeddings in
-Chroma. Benchmarked 16 models on one harness, from XGBoost through five
+Chroma. Benchmarked 16 models on one evaluation harness, from XGBoost through five
 frontier LLMs to fine-tuned open models. A fine-tuned 4-bit Llama 3.2 cut error
 62 percent below the constant baseline and beat every frontier model tested,
 including GPT-5.1 by 11 percent, moving the same base model from
-worse-than-baseline to best-in-class through fine-tuning alone.
+worse than the baseline to the best result tested, through fine-tuning alone.
 
 ### Availability
 
-Right to work in the UK. Part-time now, full-time from February 2027, then 18
-months unsponsored. Eligible to switch to Skilled Worker as a new entrant
-thereafter, so **no sponsor licence is required to hire me**.
+Right to work in the UK. Part-time now, then full-time from January 2027 on the
+Graduate Route for 18 months, and for those 18 months **no sponsor licence is
+required to hire me**. After that I can switch to Skilled Worker as a new entrant.
 
 </details>
 
