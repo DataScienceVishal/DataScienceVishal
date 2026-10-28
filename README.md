@@ -171,15 +171,15 @@ carries the instruction to treat retrieved text as data.
 <!-- profile:activity -->
 | repository | what it is | last push |
 | --- | --- | --- |
+| [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) | A live RAG assistant answering questions about my work from cited sources. FastAPI, ChromaDB… | 28 Oct 2026 |
 | [trail-scorer-audit](https://github.com/DataScienceVishal/trail-scorer-audit) | An audit of the TRAIL benchmark's scorer. Both headline metrics divide by the gold count, so a… | 25 Oct 2026 |
-| [ai-professional-twin](https://github.com/DataScienceVishal/ai-professional-twin) | A live RAG assistant answering questions about my work from cited sources. FastAPI, ChromaDB… | 22 Oct 2026 |
 | [cannot-read](https://github.com/DataScienceVishal/cannot-read) | Predictors that never see the input, scored by four benchmarks' own scorers: SQuAD v2.0… | 22 Oct 2026 |
 | [DataScienceVishal.github.io](https://github.com/DataScienceVishal/DataScienceVishal.github.io) | Personal portfolio. React 19, Vite, Tailwind v4, Motion. Every claim on the page carries a… | 21 Oct 2026 |
 | [Note_App_NUL_Web_Services_AE02](https://github.com/DataScienceVishal/Note_App_NUL_Web_Services_AE02) | SvelteKit note-taking app with JWT auth and bcrypt password hashing. Coursework for Web… | 21 Oct 2026 |
 <!-- /profile:activity -->
 
 <!-- profile:stamp -->
-<sub>Generated from the GitHub API on 27 Oct 2026. See <a href="scripts/">scripts/</a>.</sub>
+<sub>Generated from the GitHub API on 28 Oct 2026. See <a href="scripts/">scripts/</a>.</sub>
 <!-- /profile:stamp -->
 
 ## Cards
