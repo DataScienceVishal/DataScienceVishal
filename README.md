@@ -171,7 +171,7 @@ carries the instruction to treat retrieved text as data.
 <!-- profile:activity -->
 | repository | what it is | last push |
 | --- | --- | --- |
-| [ai-product-studio](https://github.com/DataScienceVishal/ai-product-studio) | _no description_ | 23 Nov 2026 |
+| [ai-product-studio](https://github.com/DataScienceVishal/ai-product-studio) | _no description_ | 24 Nov 2026 |
 | [find-the-wrecker](https://github.com/DataScienceVishal/find-the-wrecker) | Hidden-role game played by LLM agents on a CrewAI Flow, built to measure whether LLM players… | 23 Nov 2026 |
 | [DataScienceVishal.github.io](https://github.com/DataScienceVishal/DataScienceVishal.github.io) | Personal portfolio. React 19, Vite, Tailwind v4, Motion. Every claim on the page carries a… | 23 Nov 2026 |
 | [untrusted-rows](https://github.com/DataScienceVishal/untrusted-rows) | A read-only DuckDB MCP server that treats the rows it returns as untrusted input. Measuring… | 21 Nov 2026 |
@@ -179,7 +179,7 @@ carries the instruction to treat retrieved text as data.
 <!-- /profile:activity -->
 
 <!-- profile:stamp -->
-<sub>Generated from the GitHub API on 23 Nov 2026. See <a href="scripts/">scripts/</a>.</sub>
+<sub>Generated from the GitHub API on 24 Nov 2026. See <a href="scripts/">scripts/</a>.</sub>
 <!-- /profile:stamp -->
 
 ## Cards
